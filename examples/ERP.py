@@ -73,6 +73,7 @@ from mne.datasets import sample
 
 # EEGNet-specific imports
 from EEGModels import EEGNet
+import tensorflow
 from tensorflow.keras import utils as np_utils
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras import backend as K
@@ -87,6 +88,7 @@ from sklearn.linear_model import LogisticRegression
 # tools for plotting confusion matrices
 from matplotlib import pyplot as plt
 
+print("Num GPUs Available: ", len(tensorflow.config.list_physical_devices('GPU')))
 # while the default tensorflow ordering is 'channels_last' we set it here
 # to be explicit in case if the user has changed the default ordering
 K.set_image_data_format('channels_last')
